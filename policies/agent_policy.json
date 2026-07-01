@@ -1,0 +1,21 @@
+{
+    "agent": "assistant1",
+    "capabilities": [
+        {
+            "effect": "allow",
+            "action": "read",
+            "resource": "file:/data/*",
+            "max_uses": 5
+        },
+        {
+            "effect": "deny",
+            "action": "read",
+            "resource": "file:/data/secret.txt"
+        },
+        {
+            "effect": "allow",
+            "action": "write",
+            "resource": "file:/tmp/*"
+        }
+    ]
+}
