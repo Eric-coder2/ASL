@@ -31,6 +31,3 @@ class Agent:
 
     def __repr__(self):
         return f"<Agent {self.id}>"
-        
-        
-    
