@@ -1,0 +1,6 @@
+{
+  "deny": [
+    { "tool": "fs.read", "path_prefix": "/public/secret.txt" },
+    { "tool": "fs.write", "path_prefix": "/public" }
+  ]
+}

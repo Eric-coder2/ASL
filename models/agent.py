@@ -22,11 +22,11 @@ class Agent:
         return tuple(self._capabilities) #returns read only copy of list
     
     #add capability
-    def add_capability(self, capability):
+    def add_capability(self, capability: Capability):
         #doesnt authorize capability, structural check only
         #policy_engine checks if its allowed
         if not isinstance(capability, Capability):
-            raise TypeError(f"Expected Capability object, got {type(capability.__name__)}")
+            raise TypeError(f"Expected Capability object, got {type(capability).__name__}")
         self._capabilities.append(capability)
 
     def __repr__(self):

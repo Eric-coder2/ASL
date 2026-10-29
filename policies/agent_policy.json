@@ -1,21 +1,17 @@
 {
-    "agent": "assistant1",
-    "capabilities": [
-        {
-            "effect": "allow",
-            "action": "read",
-            "resource": "file:/data/*",
-            "max_uses": 5
-        },
-        {
-            "effect": "deny",
-            "action": "read",
-            "resource": "file:/data/secret.txt"
-        },
-        {
-            "effect": "allow",
-            "action": "write",
-            "resource": "file:/tmp/*"
-        }
-    ]
+  "agent": "agent_1",
+  "capabilities": [
+    {
+      "tool": "fs.read",
+      "scope": "/public/*",
+      "constraints": { "max_bytes": 10240, "max_uses": 5 },
+      "expires_at": "2030-01-01T00:00:00+00:00"
+    },
+    {
+      "tool": "fs.write",
+      "scope": "/outputs/*",
+      "constraints": { "max_bytes": 20480, "overwrite": false },
+      "expires_at": "2030-01-01T00:00:00+00:00"
+    }
+  ]
 }
